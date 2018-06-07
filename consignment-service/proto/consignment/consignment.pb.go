@@ -24,11 +24,11 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type Consignment struct {
-	Id                   string       `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Description          string       `protobuf:"bytes,2,opt,name=description" json:"description,omitempty"`
-	Weight               int32        `protobuf:"varint,3,opt,name=weight" json:"weight,omitempty"`
-	Containers           []*Container `protobuf:"bytes,4,rep,name=containers" json:"containers,omitempty"`
-	VesselId             string       `protobuf:"bytes,5,opt,name=vessel_id,json=vesselId" json:"vessel_id,omitempty"`
+	Id                   string       `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Description          string       `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
+	Weight               int32        `protobuf:"varint,3,opt,name=weight,proto3" json:"weight,omitempty"`
+	Containers           []*Container `protobuf:"bytes,4,rep,name=containers,proto3" json:"containers,omitempty"`
+	VesselId             string       `protobuf:"bytes,5,opt,name=vessel_id,json=vesselId,proto3" json:"vessel_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -94,10 +94,10 @@ func (m *Consignment) GetVesselId() string {
 }
 
 type Container struct {
-	Id                   string   `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	CustomerId           string   `protobuf:"bytes,2,opt,name=customer_id,json=customerId" json:"customer_id,omitempty"`
-	Origin               string   `protobuf:"bytes,3,opt,name=origin" json:"origin,omitempty"`
-	UserId               string   `protobuf:"bytes,4,opt,name=user_id,json=userId" json:"user_id,omitempty"`
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CustomerId           string   `protobuf:"bytes,2,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
+	Origin               string   `protobuf:"bytes,3,opt,name=origin,proto3" json:"origin,omitempty"`
+	UserId               string   `protobuf:"bytes,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -186,9 +186,9 @@ func (m *GetRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_GetRequest proto.InternalMessageInfo
 
 type Response struct {
-	Created              bool           `protobuf:"varint,1,opt,name=created" json:"created,omitempty"`
-	Consignment          *Consignment   `protobuf:"bytes,2,opt,name=consignment" json:"consignment,omitempty"`
-	Consignments         []*Consignment `protobuf:"bytes,3,rep,name=consignments" json:"consignments,omitempty"`
+	Created              bool           `protobuf:"varint,1,opt,name=created,proto3" json:"created,omitempty"`
+	Consignment          *Consignment   `protobuf:"bytes,2,opt,name=consignment,proto3" json:"consignment,omitempty"`
+	Consignments         []*Consignment `protobuf:"bytes,3,rep,name=consignments,proto3" json:"consignments,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
